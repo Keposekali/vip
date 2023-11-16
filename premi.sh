@@ -344,19 +344,18 @@ function password_default() {
     TIME="10"
     URL="https://api.telegram.org/bot$KEY/sendMessage"
     TEXT="
-     ============================
-       🔥AUTOSCRIPT PREMIUM🔥
-    ============================
-    <code>Tanggal    :</code> <code>$tanggal</code>
-    <code>Hostname   :</code> <code>${HOSTNAME}</code>
-    <code>Domain     :</code> <code>$domain</code>
-    <code>IP Vps     :</code> <code>$MYIP</code>
-    <code>Exp Script :</code> <code>$exp</code>
-    ============================
-        ⚠️ By @Rmblvpn1 ⚠️
-    ============================
+<code>────────────────────</code>
+<b>🔥AUTOSCRIPT PREMIUM🔥</b>
+<code>────────────────────</code>
+<code>TIME       :</code> <code>$TIMEZONE</code>
+<code>Hostname   :</code> <code>${HOSTNAME}</code>
+<code>Domain     :</code> <code>$domain</code>
+<code>IP Vps     :</code> <code>$ipsaya</code>
+<code>Exp Script :</code> <code>$EXPSC</code>
+<code>────────────────────</code>
+<i>Automatic Notification from</i>
+"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ🔥","url":"https://t.me/Rmblvpn1"},{"text":"Grup🔥","url":"https://t.me/configopok"}]]}'
 "
-
    curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
 
