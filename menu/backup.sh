@@ -11,10 +11,10 @@ export COLBG1="$(cat /etc/rmbl/theme/$colornow | grep -w "BG" | cut -d: -f2|sed 
 WH='\033[1;37m'
 ###########- END COLOR CODE -##########
 
-ipsaya=$(curl -sS ipinfo.io/ip)
+ipsaya=$(curl -s -4 icanhazip.com)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/RMBL-VPN/permission/main/ipmini"
+data_ip="https://raw.githubusercontent.com/Keposekali/permission/main/ipmini"
 checking_sc() {
     useexp=$(curl -sS $data_ip | grep $ipsaya | awk '{print $3}')
     if [[ $date_list < $useexp ]]; then
@@ -36,7 +36,7 @@ checking_sc() {
 checking_sc
 
 clear
-IP=$(wget -qO- ipinfo.io/ip);
+IP=$(wget curl -s -4 icanhazip.com);
 date=$(date +"%Y-%m-%d")
 echo "Mohon Menunggu , Proses Backup sedang berlangsung !!"
 rm -rf /root/backup
